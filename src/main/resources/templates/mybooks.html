@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+		<title>Page Preloading Effect | Demo 1</title>
+		<meta name="description" content="Page Preloading Effect: Re-creating the effect seen on fontface.ninja" />
+		<meta name="keywords" content="page loading, effect, initial, logo, sliding, web design, css animation, transform" />
+		<meta name="author" content="Codrops" />
+		<link rel="stylesheet" type="text/css" href="css/layout-simple.css" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+			<link rel="stylesheet" type="text/css" href="css/header.css" />
+					<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/effect1.css" />
+		<script src="js/modernizr.custom.63321.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/icons.css" />
+					<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="">
+	<div id="perspective" class="perspective effect-movedown">
+		<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+
+<div th:include="fragments/header::main"></div>
+
+<div class="content_main">
+<div>
+	<a href="/newbook">New Book</a>
+</div>
+	<ul class="grid cs-style-4 books">
+				<li th:each="book : ${books}">
+					<figure>
+						<div><img src="img/1.png" alt="img05"/></div>
+						<figcaption>
+							<h3>Name</h3>
+							<span th:text="${book.name}"></span>
+							<h3>Category</h3>
+							<span>fantasy novel</span>
+							
+							<a th:href="'/book/' + ${book.id}">Take a look</a>
+						</figcaption>
+					</figure>
+					<span th:text="${book.name}"></span>
+				</li>
+				
+			</ul>
+</div>
+</div>
+</div>
+</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
+		<script src="js/classie.js"></script>
+		<script src="js/pathLoader.js"></script>
+
+		<script src="js/menu.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.dropdown.js"></script>
+		<script type="text/javascript">
+			
+		function dropdownClick(target, other) {
+			  if(document.querySelectorAll(other)[0].classList.contains('active')){
+			    document.querySelectorAll(other)[0].classList.remove('active');
+			  }
+			  document.querySelectorAll(target)[0].classList.toggle('active');
+			}
+
+			document.querySelector(".profileddtrigger").addEventListener("click", function() {
+			  dropdownClick('.profiledd', '.mobilemenudd');
+			});
+			document.querySelector(".ddtriggermobile").addEventListener("click", function() {
+			  dropdownClick('.mobilemenudd', '.profiledd');
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+		<title>Page Preloading Effect | Demo 1</title>
+		<meta name="description" content="Page Preloading Effect: Re-creating the effect seen on fontface.ninja" />
+		<meta name="keywords" content="page loading, effect, initial, logo, sliding, web design, css animation, transform" />
+		<meta name="author" content="Codrops" />
+		<link rel="stylesheet" type="text/css" href="../css/layout-simple.css" />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style5.css" />
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/effect1.css" />
+		<script src="../js/modernizr.custom.63321.js"></script>
+			<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+		<script src="../js/modernizr.custom.js"></script>
+	</head>
+	<body class="">
+	<div id="perspective" class="perspective effect-movedown">
+		<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+		<nav style="height:50px;padding:17px;" class="main_nav">
+			<a href="/html/">HTML</a>
+			<div id="morphsearch" class="morphsearch">
+				<form class="morphsearch-form">
+					<input class="morphsearch-input" type="search" placeholder="Search..."/>
+					<button class="morphsearch-submit" style="box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.0);" type="submit"></button>
+				</form>
+				<div class="morphsearch-content">
+					<div class="dummy-column">
+						<h2>People</h2>
+							<span th:each="message : ${category}">
+					        <a class="dummy-media-object" th:text="${message.name}" th:href="@{/category/} + ${message.name}"></a>
+							</span>						
+						
+					
+					</div>
+
+				</div><!-- /morphsearch-content -->
+				<span class="morphsearch-close"></span>
+			</div><!-- /morphsearch -->
+			<div style="float:right">
+				<a href="/html/">HTML</a>
+				<!-- <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form> -->
+				<i class="fa fa-user" aria-hidden="true"></i>
+			</div>
+		</nav>
+<p><button id="menu_b"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></button></p>
+<div class="content_main">
+	<ul class="grid cs-style-4 books">
+				<li>
+					<figure>
+						<div><img src="../img/1.png" alt="img05"/></div>
+						<figcaption>
+							<h3>Name</h3>
+							<span>The dream list</span>
+							<h3>Category</h3>
+							<span>fantasy novel</span>
+							<h3>Complited</h3>
+							<span>0%</span>
+							<a href="/book">Take a look</a>
+						</figcaption>
+					</figure>
+					The dream list
+				</li>
+				
+			</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="overlay"></div>
+	<nav class="outer-nav top horizontal">
+				<a href="#" class="">Home</a>
+				<a href="#" class="">News</a>
+				<a href="#" class="">Images</a>
+				<a href="#" class="">Uploads</a>
+				<a href="#" class="">Favorites</a>
+				<a href="#" class="">Messages</a>
+				<a href="#" class="">Security</a>
+			</nav>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
+		<script src="../js/classie.js"></script>
+		<script src="../js/pathLoader.js"></script>
+
+		<script src="../js/menu.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.dropdown.js"></script>
+		<script type="text/javascript">
+			
+			$( function() {
+				
+				$( '#cd-dropdown' ).dropdown( {
+					gutter : 5,
+					stack : false,
+					slidingIn : 100
+				} );
+
+			});
+			(function() {
+				var morphSearch = document.getElementById( 'morphsearch' ),
+					input = morphSearch.querySelector( 'input.morphsearch-input' ),
+					ctrlClose = morphSearch.querySelector( 'span.morphsearch-close' ),
+					isOpen = isAnimating = false,
+					// show/hide search area
+					toggleSearch = function(evt) {
+					console.log("dsa");
+						// return if open and the input gets focused
+						
+						console.log("dsa");
+						var offsets = morphsearch.getBoundingClientRect();
+						if( isOpen ) {
+							console.log("dsa");
+							classie.remove( morphSearch, 'open' );
+
+							// trick to hide input text once the search overlay closes 
+							// todo: hardcoded times, should be done after transition ends
+							if( input.value !== '' ) {
+								setTimeout(function() {
+									classie.add( morphSearch, 'hideInput' );
+									setTimeout(function() {
+										classie.remove( morphSearch, 'hideInput' );
+										input.value = '';
+									}, 300 );
+								}, 500);
+							}
+							
+							input.blur();
+						}
+						else {
+							console.log("dsa");
+							classie.add( morphSearch, 'open' );
+						}
+						isOpen = !isOpen;
+					};
+
+				// events
+				input.addEventListener( 'focus', toggleSearch );
+				ctrlClose.addEventListener( 'click', toggleSearch );
+				// esc key closes search overlay
+				// keyboard navigation events
+				document.addEventListener( 'keydown', function( ev ) {
+					var keyCode = ev.keyCode || ev.which;
+					if( keyCode === 27  ) {
+						toggleSearch(ev);
+					}
+				} );
+
+
+				/***** for demo purposes only: don't allow to submit the form *****/
+				morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+			})();
+		</script>
+		<script src="../js/toucheffects.js"></script>
+	</body>
+</html>

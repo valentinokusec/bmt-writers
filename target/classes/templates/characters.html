@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+		<title>Page Preloading Effect | Demo 1</title>
+		<meta name="description" content="Page Preloading Effect: Re-creating the effect seen on fontface.ninja" />
+		<meta name="keywords" content="page loading, effect, initial, logo, sliding, web design, css animation, transform" />
+		<meta name="author" content="Codrops" />
+		<link rel="stylesheet" type="text/css" href="css/layout-simple.css" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+				<link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<link rel="stylesheet" type="text/css" href="css/style5.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/effect1.css" />
+		<script src="js/modernizr.custom.63321.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="">
+	<div id="perspective" class="perspective effect-movedown">
+		<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+		<nav style="height:50px;padding:17px;" class="main_nav">
+			<a href="/html/">HTML</a>
+			<div id="morphsearch" class="morphsearch">
+				<form class="morphsearch-form">
+					<input class="morphsearch-input" type="search" placeholder="Search..."/>
+					<button class="morphsearch-submit" style="box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.0);" type="submit"></button>
+				</form>
+				<div class="morphsearch-content">
+					<div class="dummy-column">
+						<h2>People</h2>
+							<span th:each="message : ${category}">
+					        <a class="dummy-media-object" th:text="${message.name}" th:href="@{/category/} + ${message.name}"></a>
+							</span>						
+						
+					
+					</div>
+
+				</div><!-- /morphsearch-content -->
+				<span class="morphsearch-close"></span>
+			</div><!-- /morphsearch -->
+			<div style="float:right">
+				<a href="/html/">HTML</a>
+				<!-- <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form> -->
+				<i class="fa fa-user" aria-hidden="true"></i>
+			</div>
+		</nav>
+<p><button id="menu_b" style="position: absolute;"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></button></p>
+<div class="content_main">
+	<button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
+			<div id="theSidebar" class="sidebar">
+				<button class="close-button fa fa-fw fa-close"></button>
+			
+			
+				<div style="margin-top:50px;">
+					<h1 style="margin-left:0px;margin-bottom:20px;">The book thief</h1>
+					<div style="height:2px; width:60%; background-color:rgb(255,64,129); margin-left:50px;"></div>
+				</div>
+				<p>Category:fantasy novel</p>
+				<p>Chapters:10</p>
+				<p>Complitted:</p>
+				<p>Difficulty:medium</p>
+				<div class="related">
+					
+					<a href="/details">Details</a>
+					<a href="/characters">Characters</a>
+					<a href="/chapters">Chapters</a>
+				</div>
+			</div>
+			<div id="theGrid" class="main" style="margin:0px;">
+				<section class="grid">
+			
+					<a class="grid__item" href="#">
+						<h2 class="title title--preview">Hope for Amy Walters</h2>
+						<div class="loader"></div>
+						<span class="category">Life &amp; Death</span>
+						<div class="meta meta--preview">
+							<img class="meta__avatar" src="img/authors/4.png" alt="author04" /> 
+							<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
+							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
+						</div>
+					</a>
+					<a class="grid__item" href="#">
+						<h2 class="title title--preview">My Father told me...</h2>
+						<div class="loader"></div>
+						<span class="category">Nature vs. Nurture</span>
+						<div class="meta meta--preview">
+							<img class="meta__avatar" src="img/authors/5.png" alt="author05" /> 
+							<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
+							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
+						</div>
+					</a>
+					<a class="grid__item" href="#">
+						<h2 class="title title--preview">On Humans &amp; other Beings</h2>
+						<div class="loader"></div>
+						<span class="category">Stories for humans</span>
+						<div class="meta meta--preview">
+							<img class="meta__avatar" src="img/authors/1.png" alt="author01" /> 
+							<span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
+							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>
+						</div>
+					</a>
+					<a class="grid__item" href="#">
+						<h2 class="title title--preview">The Things we Lost in the Fire</h2>
+						<div class="loader"></div>
+						<span class="category">Love &amp; Hate</span>
+						<div class="meta meta--preview">
+							<img class="meta__avatar" src="img/authors/2.png" alt="author02" /> 
+							<span class="meta__date"><i class="fa fa-calendar-o"></i> 7 Apr</span>
+							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 5 min read</span>
+						</div>
+					</a>
+				
+				</section>
+				<section class="content grid_content">
+					<div class="scroll-wrap">
+						<article class="content__item">
+							<span class="category category--full">Life &amp; Death</span>
+							<h2 class="title title--full">Hope for Amy Walters</h2>
+							<div class="meta meta--full">
+								<img class="meta__avatar" src="img/authors/4.png" alt="author04" />
+								<span class="meta__author">Sandra Paulson</span>
+								<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
+								<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
+								<span class="meta__misc meta__misc--seperator"><i class="fa fa-comments-o"></i> 7 comments</span>
+								<span class="meta__misc"><i class="fa fa-heart"></i> 12 favorites</span>
+								<nav class="article-nav">
+									<button><i class="fa fa-angle-left"></i> <span>Previous</span></button>
+									<button><span>Next</span> <i class="fa fa-angle-right"></i></button>
+								</nav>
+							</div>
+							<p>In contrast to this, our discussion readily shows that the double meaning in question belonged to the word taboo from the very beginning and that it serves to designate a definite ambivalence as well as everything which has come into existence on the basis of this ambivalence. </p>
+						
+						</article>
+						<article class="content__item">
+							<span class="category category--full">Nature vs. Nurture</span>
+							<h2 class="title title--full">My Father told me...</h2>
+							<div class="meta meta--full">
+								<img class="meta__avatar" src="img/authors/5.png" alt="author05" />
+								<span class="meta__author">Leila Nastafi</span>
+								<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
+								<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
+								<span class="meta__misc meta__misc--seperator"><i class="fa fa-comments-o"></i> 23 comments</span>
+								<span class="meta__misc"><i class="fa fa-heart"></i> 253 favorites</span>
+								<nav class="article-nav">
+									<button><i class="fa fa-angle-left"></i> <span>Previous</span></button>
+									<button><span>Next</span> <i class="fa fa-angle-right"></i></button>
+								</nav>
+							</div>
+							<p>Conscience is the inner perception of objections to definite wish impulses that exist in us; but the emphasis is put upon the fact that this rejection does not have to depend on anything else, that it is sure of itself. </p>
+					
+						</article>
+						<article class="content__item">
+							<span class="category category--full">Stories for humans</span>
+							<h2 class="title title--full">On Humans &amp; other Beings</h2>
+							<div class="meta meta--full">
+								<img class="meta__avatar" src="img/authors/1.png" alt="author01" />
+								<span class="meta__author">Matthew Walters</span>
+								<span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
+								<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>
+								<span class="meta__misc meta__misc--seperator"><i class="fa fa-comments-o"></i> 12 comments</span>
+								<span class="meta__misc"><i class="fa fa-heart"></i> 45 favorites</span>
+								<nav class="article-nav">
+									<button><i class="fa fa-angle-left"></i> <span>Previous</span></button>
+									<button><span>Next</span> <i class="fa fa-angle-right"></i></button>
+								</nav>
+							</div>
+							<p>I am fully aware of the shortcomings in these essays. I shall not touch upon those which are characteristic of first efforts at investigation. The others, however, demand a word of explanation.</p>
+				
+						</article>
+						<article class="content__item">
+							<span class="category category--full">Love &amp; Hate</span>
+							<h2 class="title title--full">The Things we Lost in the Fire</h2>
+							<div class="meta meta--full">
+								<img class="meta__avatar" src="img/authors/2.png" alt="author02" />
+								<span class="meta__author">Christian Belverde</span>
+								<span class="meta__date"><i class="fa fa-calendar-o"></i> 7 Apr</span>
+								<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 5 min read</span>
+								<span class="meta__misc meta__misc--seperator"><i class="fa fa-comments-o"></i> 5 comments</span>
+								<span class="meta__misc"><i class="fa fa-heart"></i> 5 favorites</span>
+								<nav class="article-nav">
+									<button><i class="fa fa-angle-left"></i> <span>Previous</span></button>
+									<button><span>Next</span> <i class="fa fa-angle-right"></i></button>
+								</nav>
+							</div>
+							<p>Faulty psychic actions, dreams and wit are products of the unconscious mental activity, and like neurotic or psychotic manifestations represent efforts at adjustment to one’s environment. </p>
+			
+						</article>
+						<article class="content__item">
+							<span class="category category--full">Nutrition</span>
+							<h2 class="title title--full">What Goes Around Comes Around</h2>
+							<div class="meta meta--full">
+								<img class="meta__avatar" src="img/authors/3.png" alt="author03" />
+								<span class="meta__author">Carol Freeman</span>
+								<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
+								<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
+								<span class="meta__misc meta__misc--seperator"><i class="fa fa-comments-o"></i> 18 comments</span>
+								<span class="meta__misc"><i class="fa fa-heart"></i> 125 favorites</span>
+								<nav class="article-nav">
+									<button><i class="fa fa-angle-left"></i> <span>Previous</span></button>
+									<button><span>Next</span> <i class="fa fa-angle-right"></i></button>
+								</nav>
+							</div>
+							<p>Primitive man is known to us by the stages of development through which he has passed: that is, through the inanimate monuments and implements which he has left behind for us, through our knowledge of his art, his religion and his attitude towards life, which we have received either directly or through the medium of legends, myths and fairy tales; and through the remnants of his ways of thinking that survive in our own manners and customs. </p>
+						
+						</article>
+					
+					
+					</div>
+					<button class="close-button trigger"><i class="fa fa-close"></i><span>Close</span></button>
+				</section>
+			</div>
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="overlay"></div>
+	<nav class="outer-nav top horizontal">
+				<a href="#" class="">Home</a>
+				<a href="#" class="">News</a>
+				<a href="#" class="">Images</a>
+				<a href="#" class="">Uploads</a>
+				<a href="#" class="">Favorites</a>
+				<a href="#" class="">Messages</a>
+				<a href="#" class="">Security</a>
+			</nav>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
+		<script src="js/classie.js"></script>
+		<script src="js/pathLoader.js"></script>
+		<script src="js/grid.js"></script>
+		<script src="js/menu.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.dropdown.js"></script>
+		<script type="text/javascript">
+			
+			$( function() {
+				
+				$( '#cd-dropdown' ).dropdown( {
+					gutter : 5,
+					stack : false,
+					slidingIn : 100
+				} );
+
+			});
+			(function() {
+				var morphSearch = document.getElementById( 'morphsearch' ),
+					input = morphSearch.querySelector( 'input.morphsearch-input' ),
+					ctrlClose = morphSearch.querySelector( 'span.morphsearch-close' ),
+					isOpen = isAnimating = false,
+					// show/hide search area
+					toggleSearch = function(evt) {
+					console.log("dsa");
+						// return if open and the input gets focused
+						
+						console.log("dsa");
+						var offsets = morphsearch.getBoundingClientRect();
+						if( isOpen ) {
+							console.log("dsa");
+							classie.remove( morphSearch, 'open' );
+
+							// trick to hide input text once the search overlay closes 
+							// todo: hardcoded times, should be done after transition ends
+							if( input.value !== '' ) {
+								setTimeout(function() {
+									classie.add( morphSearch, 'hideInput' );
+									setTimeout(function() {
+										classie.remove( morphSearch, 'hideInput' );
+										input.value = '';
+									}, 300 );
+								}, 500);
+							}
+							
+							input.blur();
+						}
+						else {
+							console.log("dsa");
+							classie.add( morphSearch, 'open' );
+						}
+						isOpen = !isOpen;
+					};
+
+				// events
+				input.addEventListener( 'focus', toggleSearch );
+				ctrlClose.addEventListener( 'click', toggleSearch );
+				// esc key closes search overlay
+				// keyboard navigation events
+				document.addEventListener( 'keydown', function( ev ) {
+					var keyCode = ev.keyCode || ev.which;
+					if( keyCode === 27  ) {
+						toggleSearch(ev);
+					}
+				} );
+
+
+				/***** for demo purposes only: don't allow to submit the form *****/
+				morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+			})();
+		</script>
+	</body>
+</html>

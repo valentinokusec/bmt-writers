@@ -1,0 +1,35 @@
+<div th:fragment="main">
+
+<nav class="nav">
+	<div class="navcontainer">
+		<h2>BMT writers</h2>
+		<nav class="navinner">
+			<a href="/main">Dashboard</a>
+		
+			<a href="javascript:void(0)" class="ddtriggermobile"><i class="material-icons">menu</i></a>
+			<a href="#0" class="profileddtrigger"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/324479/me.jpg" /></a>
+			<!-- mobile main menu-->
+			<div class="ddcontainer mobilemenudd">
+				<nav class="ddnav">
+					<a href="#0"><span class="material-icons">dashboard</span><span>Dashboard</span></a>
+					<a href="#0"><span class="material-icons">search</span><span>Search</span></a>
+					<a href="#0"><span class="material-icons">insert_drive_file</span><span>Drafts</span></a>
+				</nav>
+			</div>
+      <!-- dropdown profile menu -->
+			<div class="ddcontainer profiledd">
+				<a href="#0" class="ddheader">
+					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/324479/me.jpg" />
+					<h5 class="ddname">Mason Fox</h5><span class="ddtitle">Front End Dev</span>
+				</a>
+				<nav class="ddnav">
+					<a href="/mybooks"><span class="material-icons">notifications</span><span>MyBooks</span></a>
+					<a href="#0"><span class="material-icons">settings</span><span>Settings</span></a>
+					
+					<a href="#0"><span class="material-icons">exit_to_app</span><span>Logout</span></a>
+				</nav>
+			</div>
+		</nav>
+	</div>
+</nav>
+</div>
